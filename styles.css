@@ -1,0 +1,316 @@
+:root {
+  --paper: #f4f1e8;
+  --ink: #20211e;
+  --muted: #6c6b64;
+  --line: #cbc7ba;
+  --accent: #c64b2c;
+  --max-width: 860px;
+  --side-space: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino,
+    Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 10;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.7rem 1rem;
+  transform: translateY(-200%);
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header,
+main,
+footer {
+  width: min(100%, var(--max-width));
+  margin-inline: auto;
+  padding-inline: var(--side-space);
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  font-size: 0.84rem;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.hero {
+  padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.eyebrow,
+.publication-year,
+.publication-venue,
+.project-meta,
+.footer-note {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin: 0 0 1.5rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 23ch;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 3.5vw, 2.85rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+}
+
+h1 span:last-child {
+  color: inherit;
+}
+
+.hero-footer {
+  display: block;
+}
+
+.introduction {
+  max-width: 42rem;
+  margin-bottom: 0;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.86rem;
+}
+
+.section {
+  display: block;
+  padding-block: clamp(3.5rem, 7vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+
+.section-label h2 {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.philosophy-copy {
+  max-width: 48rem;
+}
+
+.philosophy-copy .lead {
+  max-width: 36rem;
+  margin-bottom: 2rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+.philosophy-copy > p:last-child {
+  max-width: 35rem;
+  margin-bottom: 0;
+  font-size: 1.05rem;
+}
+
+.publication-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.publication-list li {
+  padding-block: 0 2.25rem;
+}
+
+.publication-list li + li {
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.publication-list article,
+.project-list article {
+  display: grid;
+  grid-template-columns: 3.75rem minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.publication-year {
+  margin: 0.2rem 0 0;
+}
+
+.publication-list h3,
+.project-list h3 {
+  margin-bottom: 0.65rem;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.publication-list h3 a,
+.project-list h3 a {
+  text-decoration: none;
+}
+
+.publication-list article p:not(.publication-year),
+.project-list article p {
+  margin-bottom: 0.25rem;
+}
+
+.publication-venue,
+.project-meta {
+  margin-top: 0.65rem;
+}
+
+.project-list article {
+  display: block;
+  padding: 0 0 2.5rem;
+}
+
+.project-list article + article {
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.project-list article > div > p:not(.project-meta) {
+  max-width: 37rem;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  justify-content: space-between;
+  padding-block: 3rem 4rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+.footer-note {
+  text-align: right;
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    min-height: 4.5rem;
+  }
+
+  .site-header nav a:not(:last-child) {
+    display: none;
+  }
+
+  .hero {
+    padding-block: 3.75rem;
+  }
+
+  h1 {
+    margin-bottom: 2.5rem;
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
+  }
+
+  footer {
+    display: block;
+  }
+
+  .footer-note {
+    margin-top: 1.25rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 420px) {
+  .publication-list article,
+  .project-list article {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .publication-year {
+    margin-bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
