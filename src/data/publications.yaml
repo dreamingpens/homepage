@@ -1,0 +1,44 @@
+- id: paper-2026
+  year: 2026
+  title: Title of your most recent paper
+  url: "#"
+  authors:
+    - name: Your Name
+      highlight: true
+    - name: Coauthor One
+    - name: Coauthor Two
+  venue: Journal or Conference
+  links:
+    - label: Paper
+      url: "#"
+    - label: Code
+      url: "#"
+
+- id: paper-2025
+  year: 2025
+  title: A second publication goes here
+  url: "#"
+  authors:
+    - name: Coauthor One
+    - name: Your Name
+      highlight: true
+    - name: Coauthor Two
+  venue: Journal or Conference
+  links:
+    - label: Paper
+      url: "#"
+
+- id: paper-2024
+  year: 2024
+  title: A concise and informative paper title
+  url: "#"
+  authors:
+    - name: Your Name
+      highlight: true
+    - name: Coauthor One
+  venue: Journal or Conference
+  links:
+    - label: Paper
+      url: "#"
+    - label: Data
+      url: "#"

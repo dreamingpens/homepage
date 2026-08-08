@@ -1,0 +1,18 @@
+- id: primary
+  name: Your Name
+  page_title: Your Name — Researcher
+  description: Research portfolio of Your Name — philosophy, publications, and projects.
+  eyebrow: Researcher · [Your field]
+  headline: I study [your subject] to understand [the question that drives your work].
+  introduction: >
+    I am a [position] at [institution]. My work sits at the intersection of
+    [area one] and [area two], with a focus on [short research focus].
+  navigation:
+    philosophy: Philosophy
+    publications: Publications
+    projects: Projects
+  publications_heading: Selected publications
+  projects_heading: Projects
+  footer_message: Open to thoughtful questions and collaborations.
+  email: you@example.com
+  copyright_year: 2026

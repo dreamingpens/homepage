@@ -1,0 +1,20 @@
+- id: project-one
+  title: Project name
+  url: "#"
+  description: >
+    A one-sentence description of what this project does, why it matters, and
+    who it is for.
+  meta:
+    - Research
+    - Open source
+  year: 2026
+
+- id: project-two
+  title: Another project
+  url: "#"
+  description: >
+    A compact explanation of the idea, method, or tool developed in this work.
+  meta:
+    - Tool
+    - Collaboration
+  year: 2025

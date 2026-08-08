@@ -1,0 +1,30 @@
+- id: email
+  order: 1
+  label: Email
+  url: mailto:you@example.com
+
+- id: scholar
+  order: 2
+  label: Google Scholar
+  url: "#"
+
+- id: github
+  order: 3
+  label: GitHub
+  url: "#"
+
+- id: linkedin
+  order: 4
+  label: LinkedIn
+  url: "#"
+
+- id: x
+  order: 5
+  label: X
+  url: "#"
+
+- id: cv
+  order: 6
+  label: CV
+  url: /assets/cv.pdf
+  show_arrow: true
