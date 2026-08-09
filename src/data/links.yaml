@@ -17,10 +17,10 @@
   label: LinkedIn
   url: "https://www.linkedin.com/in/wonjun-chang-32a674263/"
 
-- id: x
+- id: blog
   order: 5
-  label: X
-  url: "#"
+  label: Blog
+  url: "https://www.wonjun.blog"
 
 - id: cv
   order: 6
