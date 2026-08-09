@@ -2,11 +2,17 @@
   name: Wonjun Chang 
   page_title:  Wonjun - Researcher
   description: Research portfolio of Your Name — philosophy, publications, and projects.
-  eyebrow: Researcher · World Model
-  headline: I study [your subject] to understand [the question that drives your work].
-  introduction: >
-    I am a [position] at [institution]. My work sits at the intersection of
-    [area one] and [area two], with a focus on [short research focus].
+  eyebrow: Researcher · Physical AI
+  headline: I study World Model to understand how the world works physically and intelligence understands it.
+  introduction:
+    affiliation: I am a researcher at KAIST AI
+    supervisor:
+      name: Seung Wook Kim
+      url: https://seung-kim.github.io/seungkim/
+    research: >
+      My work sits at the intersection of physical AI and efficient AI, with a
+      focus on efficiently compressing the shared global state in multi-agent
+      world models.
   navigation:
     philosophy: Philosophy
     publications: Publications
@@ -14,5 +20,5 @@
   publications_heading: Selected publications
   projects_heading: Projects
   footer_message: Open to thoughtful questions and collaborations.
-  email: you@example.com
+  email: wj055912@gmail.com
   copyright_year: 2026

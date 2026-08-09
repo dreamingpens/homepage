@@ -181,9 +181,30 @@ h1 span:last-child {
   line-height: 1.35;
 }
 
-.philosophy-copy > p:last-child {
-  max-width: 35rem;
-  margin-bottom: 0;
+.principle-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.principle-list li {
+  padding-block: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.principle-list li:last-child {
+  padding-bottom: 0;
+}
+
+.principle-list h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.principle-list p {
+  max-width: 42rem;
+  margin: 0;
   font-size: 1.05rem;
 }
 

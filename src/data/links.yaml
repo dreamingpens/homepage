@@ -1,7 +1,6 @@
 - id: email
   order: 1
   label: Email
-  url: mailto:you@example.com
 
 - id: scholar
   order: 2
@@ -16,7 +15,7 @@
 - id: linkedin
   order: 4
   label: LinkedIn
-  url: "#"
+  url: "https://www.linkedin.com/in/wonjun-chang-32a674263/"
 
 - id: x
   order: 5
