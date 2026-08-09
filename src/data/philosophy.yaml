@@ -1,7 +1,27 @@
 - id: main
   heading: Philosophy
-  lead: Good research makes the complicated legible without pretending it is simple.
-  body: >
-    I believe useful knowledge begins with careful questions. My work combines
-    [your approach] with [your method] to produce research that is rigorous,
-    open, and connected to the world beyond the lab.
+  lead: I believe these principles define me better than my achievements do.
+  principles:
+    - title: The Pareto Principle
+      body: >
+        I deeply believe in the Pareto principle. The central message and conclusion
+        of any piece of writing should be simple and clear. If I cannot explain an
+        idea in a single sentence, I probably do not understand it well enough.
+        Likewise, if an action requires many different reasons to justify it, I may
+        not have identified the real issue. I believe in focusing my time and energy
+        on the vital few things that truly matter.
+    - title: Beyond Conventional Trade-off Ideology
+      body: >
+        I do not fully subscribe to the conventional ideology that every gain must
+        come with a corresponding loss. I believe the best results come from focusing
+        on what genuinely interests me. I also believe laziness can be productive
+        when it motivates us to automate repetitive work and build more efficient
+        systems. Especially in investing, I believe there are ways to increase
+        expected returns while reducing the risk premium.
+    - title: The Power of Compounding
+      body: >
+        I value what endures, accumulates, and grows over time, so I try to make the
+        most of the principle of compounding. Rather than constantly adapting to
+        whatever changes fastest, I believe in building assets that grow slowly but
+        remain valuable for a long time. This is also an example of the second
+        principle: improving performance while reducing risk.

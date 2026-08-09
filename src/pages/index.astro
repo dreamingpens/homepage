@@ -58,13 +58,24 @@ const withBase = (url: string) =>
         <h1 id="hero-title">{profile.headline}</h1>
 
         <div class="hero-footer">
-          <p class="introduction">{profile.introduction}</p>
+          <p class="introduction">
+            {profile.introduction.affiliation}, supervised by{" "}
+            <a href={profile.introduction.supervisor.url}>
+              {profile.introduction.supervisor.name}
+            </a>. {profile.introduction.research}
+          </p>
 
           <ul class="profile-links" aria-label="Profile links">
             {
               profileLinks.map((link) => (
                 <li>
-                  <a href={withBase(link.data.url)}>
+                  <a
+                    href={
+                      link.id === "email"
+                        ? `mailto:${profile.email}`
+                        : withBase(link.data.url ?? "#")
+                    }
+                  >
                     {link.data.label}
                     {link.data.show_arrow && <span aria-hidden="true"> ↗</span>}
                   </a>
@@ -86,7 +97,18 @@ const withBase = (url: string) =>
 
         <div class="section-content philosophy-copy">
           <p class="lead">{philosophy.lead}</p>
-          <p>{philosophy.body}</p>
+          <ol class="principle-list">
+            {
+              philosophy.principles.map((principle) => (
+                <li>
+                  <article>
+                    <h3>{principle.title}</h3>
+                    <p>{principle.body}</p>
+                  </article>
+                </li>
+              ))
+            }
+          </ol>
         </div>
       </section>
 

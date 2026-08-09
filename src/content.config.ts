@@ -10,7 +10,14 @@ const profile = defineCollection({
     description: z.string(),
     eyebrow: z.string(),
     headline: z.string(),
-    introduction: z.string(),
+    introduction: z.object({
+      affiliation: z.string(),
+      supervisor: z.object({
+        name: z.string(),
+        url: z.string().url(),
+      }),
+      research: z.string(),
+    }),
     navigation: z.object({
       philosophy: z.string(),
       publications: z.string(),
@@ -29,7 +36,12 @@ const philosophy = defineCollection({
   schema: z.object({
     heading: z.string(),
     lead: z.string(),
-    body: z.string(),
+    principles: z.array(
+      z.object({
+        title: z.string(),
+        body: z.string(),
+      }),
+    ),
   }),
 });
 
@@ -73,7 +85,7 @@ const links = defineCollection({
   schema: z.object({
     order: z.number(),
     label: z.string(),
-    url: z.string(),
+    url: z.string().optional(),
     show_arrow: z.boolean().default(false),
   }),
 });
