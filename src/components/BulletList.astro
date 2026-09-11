@@ -1,0 +1,25 @@
+---
+import type { Bullet } from "../types/bullet";
+
+interface Props {
+  items: Bullet[];
+  class?: string;
+}
+
+const { items, class: className } = Astro.props;
+---
+
+<ul class={className}>
+  {items.map((item) => (
+    <li class:list={{ "expandable-bullet": typeof item !== "string" && !!item.children?.length }}>
+      {typeof item !== "string" && item.children && item.children.length > 0 ? (
+        <details>
+          <summary>{item.url ? <a href={item.url}>{item.text}</a> : item.text}</summary>
+          <Astro.self items={item.children} />
+        </details>
+      ) : (
+        typeof item === "string" ? item : item.url ? <a href={item.url}>{item.text}</a> : item.text
+      )}
+    </li>
+  ))}
+</ul>

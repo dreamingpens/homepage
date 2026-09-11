@@ -1,0 +1,54 @@
+---
+import { getCollection } from "astro:content";
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const [profileEntry] = await getCollection("profile");
+if (!profileEntry) {
+  throw new Error("Profile content is required.");
+}
+const profile = profileEntry.data;
+const publications = (await getCollection("publications")).sort(
+  (a, b) => b.data.year - a.data.year,
+);
+---
+
+<SiteLayout profile={profile} title={`${profile.navigation.publications} — ${profile.name}`} activePage="publications">
+<section class="section page-section" id="publications" aria-labelledby="publications-title">
+  <div class="section-label">
+    <h1 id="publications-title">{profile.publications_heading}</h1>
+  </div>
+
+  <ol class="section-content publication-list">
+    {
+      publications.map((publication) => (
+        <li>
+          <article>
+            <p class="publication-year">{publication.data.year}</p>
+            <div>
+              <h2>
+                <a href={publication.data.url}>{publication.data.title}</a>
+              </h2>
+              <p>
+                {publication.data.authors.map((author, index) => (
+                  <>
+                    {author.highlight ? <strong>{author.name}</strong> : author.name}
+                    {index < publication.data.authors.length - 1 && ", "}
+                  </>
+                ))}
+              </p>
+              <p class="publication-venue">
+                {publication.data.venue}
+                {publication.data.links.map((link) => (
+                  <>
+                    {" · "}<a href={link.url}>{link.label}</a>
+                  </>
+                ))}
+              </p>
+            </div>
+          </article>
+        </li>
+      ))
+    }
+  </ol>
+</section>
+</SiteLayout>

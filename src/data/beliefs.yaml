@@ -1,0 +1,11 @@
+- id: main
+  heading: Axioms
+  paragraphs:
+    - text: "Moore's Law"
+      url: https://download.intel.com/newsroom/2023/manufacturing/moores-law-electronics.pdf
+    - text: "The Bitter Lesson"
+      url: http://www.incompleteideas.net/IncIdeas/BitterLesson.html
+    - text: "Bible"
+      url: https://en.wikipedia.org/wiki/Bible
+    - text: "The Singularity Is Near"
+      url: https://en.wikipedia.org/wiki/The_Singularity_Is_Near

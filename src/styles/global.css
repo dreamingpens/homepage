@@ -72,6 +72,9 @@ footer {
 
 .site-header {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-block: 1rem;
   align-items: center;
   justify-content: space-between;
   min-height: 4.75rem;
@@ -88,12 +91,17 @@ footer {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   gap: clamp(1rem, 3vw, 2.5rem);
   font-size: 0.84rem;
 }
 
 nav a {
   text-decoration: none;
+}
+
+nav a[aria-current="page"] {
+  color: var(--accent);
 }
 
 .hero {
@@ -142,7 +150,7 @@ h1 span:last-child {
 .introduction {
   max-width: 42rem;
   margin-bottom: 0;
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-size: 1.05rem;
 }
 
 .profile-links {
@@ -168,44 +176,88 @@ h1 span:last-child {
   line-height: 1.3;
 }
 
+.page-section {
+  border-top: 0;
+}
+
 .philosophy-copy {
   max-width: 48rem;
 }
 
-.philosophy-copy .lead {
-  max-width: 36rem;
-  margin-bottom: 2rem;
-  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  line-height: 1.35;
+.dream-copy,
+.beliefs-copy,
+.whoami-copy {
+  max-width: 42rem;
+  margin: 0;
+  padding-inline-start: 1.5rem;
+  list-style: disc;
+  font-size: 1.05rem;
+}
+
+.dream-copy li + li,
+.beliefs-copy li + li,
+.whoami-copy li + li {
+  margin-top: 0.75rem;
 }
 
 .principle-list {
   margin: 0;
-  padding: 0;
+  padding-inline-start: 1.5rem;
+  list-style: disc;
+  font-size: 1.05rem;
+}
+
+.principle-list > li + li {
+  margin-top: 1.5rem;
+}
+
+.principle-list ul {
+  max-width: 42rem;
+  margin: 0.65rem 0 0;
+  padding-inline-start: 1.5rem;
+  list-style: circle;
+}
+
+.principle-list ul > li + li {
+  margin-top: 0.75rem;
+}
+
+.principle-list ul ul {
+  list-style: square;
+}
+
+.principle-list .expandable-bullet {
   list-style: none;
 }
 
-.principle-list li {
-  padding-block: 1.75rem;
-  border-top: 1px solid var(--line);
+.principle-list summary {
+  position: relative;
+  cursor: pointer;
+  list-style: none;
 }
 
-.principle-list li:last-child {
-  padding-bottom: 0;
+.principle-list summary::-webkit-details-marker {
+  display: none;
 }
 
-.principle-list h3 {
-  margin: 0 0 0.65rem;
-  font-size: 1.05rem;
-  line-height: 1.4;
+.principle-list summary::before {
+  content: "▸";
+  position: absolute;
+  left: -1.25rem;
+  color: var(--muted);
 }
 
-.principle-list p {
-  max-width: 42rem;
-  margin: 0;
-  font-size: 1.05rem;
+.principle-list details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.principle-list summary:hover {
+  color: var(--accent);
+}
+
+.principle-list summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 .publication-list {
@@ -219,8 +271,7 @@ h1 span:last-child {
 }
 
 .publication-list li + li {
-  padding-top: 2.25rem;
-  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
 }
 
 .publication-list article,
@@ -234,8 +285,8 @@ h1 span:last-child {
   margin: 0.2rem 0 0;
 }
 
-.publication-list h3,
-.project-list h3 {
+.publication-list h2,
+.project-list h2 {
   margin-bottom: 0.65rem;
   font-size: clamp(1.15rem, 2vw, 1.35rem);
   font-weight: 600;
@@ -243,8 +294,8 @@ h1 span:last-child {
   line-height: 1.3;
 }
 
-.publication-list h3 a,
-.project-list h3 a {
+.publication-list h2 a,
+.project-list h2 a {
   text-decoration: none;
 }
 
@@ -264,8 +315,7 @@ h1 span:last-child {
 }
 
 .project-list article + article {
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--line);
+  padding-top: 0.5rem;
 }
 
 .project-list article > div > p:not(.project-meta) {
@@ -293,10 +343,14 @@ footer p {
 @media (max-width: 720px) {
   .site-header {
     min-height: 4.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-block: 1rem;
   }
 
-  .site-header nav a:not(:last-child) {
-    display: none;
+  .site-header nav {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
   }
 
   .hero {
