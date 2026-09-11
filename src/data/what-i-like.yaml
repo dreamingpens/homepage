@@ -1,0 +1,7 @@
+- id: main
+  heading: What I like
+  bullets:
+    - text: A Philosophy of Software Design
+      url: https://web.stanford.edu/~ouster/cgi-bin/aposd.php
+    - text: 12 Rules for Life
+      url: https://en.wikipedia.org/wiki/12_Rules_for_Life

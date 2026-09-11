@@ -1,0 +1,21 @@
+- id: main
+  heading: Who am I
+  bullets:
+    - text: A lover of thinking
+      children:
+        - My love of thinking is the common thread behind everything I have enjoyed since childhood.
+        - How deeply I become absorbed in something is one of the key indicators of how much I enjoy it.
+    - text: A seeker of beauty
+      children:
+        - Beauty is one of the key criteria by which I judge my work.
+        - The depth of beauty we can perceive reflects the depth of our discernment.
+    - text: ADD
+      children:
+        - It has helped me discover what I truly enjoy.
+    - text: Dyslexia
+      children:
+        - It has helped me immerse myself fully in deep, original thought, free from outside influence.
+        - It has also helped me develop an engineering mindset to maximize my brain's arithmetic intensity.
+    - text: Catholic
+      children:
+        - It is the foundation that taught me what to do and why, rather than just how to do it.

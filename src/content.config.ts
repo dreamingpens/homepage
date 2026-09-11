@@ -1,6 +1,16 @@
 import { defineCollection } from "astro:content";
 import { file } from "astro/loaders";
 import { z } from "astro/zod";
+import type { Bullet } from "./types/bullet";
+
+const bulletSchema: z.ZodType<Bullet> = z.lazy(() => z.union([
+  z.string(),
+  z.object({
+    text: z.string(),
+    url: z.string().url().optional(),
+    children: z.array(bulletSchema).optional(),
+  }),
+]));
 
 const profile = defineCollection({
   loader: file("src/data/profile.yaml"),
@@ -9,7 +19,6 @@ const profile = defineCollection({
     page_title: z.string(),
     description: z.string(),
     eyebrow: z.string(),
-    headline: z.string(),
     introduction: z.object({
       affiliation: z.string(),
       supervisor: z.object({
@@ -19,9 +28,12 @@ const profile = defineCollection({
       research: z.string(),
     }),
     navigation: z.object({
+      dream: z.string(),
       philosophy: z.string(),
+      beliefs: z.string(),
       publications: z.string(),
       projects: z.string(),
+      what_i_like: z.string(),
     }),
     publications_heading: z.string(),
     projects_heading: z.string(),
@@ -31,17 +43,55 @@ const profile = defineCollection({
   }),
 });
 
+const dream = defineCollection({
+  loader: file("src/data/dream.yaml"),
+  schema: z.object({
+    heading: z.string(),
+    paragraphs: z.array(z.string()).default([]),
+  }),
+});
+
 const philosophy = defineCollection({
   loader: file("src/data/philosophy.yaml"),
   schema: z.object({
     heading: z.string(),
-    lead: z.string(),
     principles: z.array(
       z.object({
         title: z.string(),
-        body: z.string(),
+        body: z.union([z.string(), z.array(bulletSchema)]).transform(
+          (body) => typeof body === "string" ? [body] : body,
+        ),
       }),
     ),
+  }),
+});
+
+const beliefs = defineCollection({
+  loader: file("src/data/beliefs.yaml"),
+  schema: z.object({
+    heading: z.string(),
+    paragraphs: z.array(
+      z.object({
+        text: z.string(),
+        url: z.string().url().optional(),
+      }),
+    ).default([]),
+  }),
+});
+
+const whoami = defineCollection({
+  loader: file("src/data/whoami.yaml"),
+  schema: z.object({
+    heading: z.string(),
+    bullets: z.array(bulletSchema).default([]),
+  }),
+});
+
+const likes = defineCollection({
+  loader: file("src/data/what-i-like.yaml"),
+  schema: z.object({
+    heading: z.string(),
+    bullets: z.array(bulletSchema).default([]),
   }),
 });
 
@@ -92,7 +142,11 @@ const links = defineCollection({
 
 export const collections = {
   profile,
+  dream,
   philosophy,
+  beliefs,
+  whoami,
+  likes,
   publications,
   projects,
   links,

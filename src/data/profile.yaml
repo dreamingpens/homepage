@@ -1,22 +1,26 @@
 - id: primary
   name: Wonjun Chang 
   page_title:  Wonjun - Researcher
-  description: Research portfolio of Your Name — philosophy, publications, and projects.
-  eyebrow: Researcher · Physical AI
-  headline: I study World Model to understand how the world works physically and intelligence understands it.
+  description: Wonjun Chang's research portfolio — world models, physical AI, publications, and projects.
+  eyebrow: Researcher 
   introduction:
     affiliation: I am a researcher at KAIST AI
     supervisor:
       name: Seung Wook Kim
       url: https://seung-kim.github.io/seungkim/
     research: >
-      My work sits at the intersection of physical AI and efficient AI, with a
-      focus on efficiently compressing the shared global state in multi-agent
-      world models.
+      My research focuses on building a multi-agent world model as a foundation for
+      physical AI. While my current work focuses on video diffusion models for
+      physical AI, I believe world models have enormous potential across many fields.
+      My ultimate goal is to build a world model that can fully capture and simulate
+      the workings of the human body, particularly the brain.
   navigation:
+    dream: Dream
     philosophy: Philosophy
+    beliefs: Axioms
     publications: Publications
     projects: Projects
+    what_i_like: What I like
   publications_heading: Selected publications
   projects_heading: Projects
   footer_message: Open to thoughtful questions and collaborations.

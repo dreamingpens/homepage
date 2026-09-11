@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { withBase } from "../utils/urls";
+import "../styles/global.css";
+
+interface Props {
+  profile: CollectionEntry<"profile">["data"];
+  title?: string;
+  activePage?: "publications" | "projects" | "what-i-like";
+}
+
+const { profile, title, activePage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={profile.description} />
+    <meta name="theme-color" content="#f4f1e8" />
+    <title>{title ?? profile.page_title}</title>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="wordmark" href={withBase("/")} aria-label={`${profile.name}, home`}>
+        <span>{profile.name}</span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <a href={withBase("/publications/")} aria-current={activePage === "publications" ? "page" : undefined}>{profile.navigation.publications}</a>
+        <a href={withBase("/projects/")} aria-current={activePage === "projects" ? "page" : undefined}>{profile.navigation.projects}</a>
+        <a href={withBase("/what-i-like/")} aria-current={activePage === "what-i-like" ? "page" : undefined}>{profile.navigation.what_i_like}</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <footer>
+      <p>{profile.footer_message}</p>
+      <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      <p class="footer-note">© {profile.copyright_year} {profile.name}</p>
+    </footer>
+  </body>
+</html>
