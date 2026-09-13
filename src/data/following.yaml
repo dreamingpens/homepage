@@ -1,0 +1,9 @@
+- id: main
+  heading: Following
+  bullets:
+    - text: antirez
+      url: https://antirez.com/latest/0
+    - text: Andrej Karpathy
+      url: https://karpathy.github.io/
+    - text: Tri Dao
+      url: https://tridao.me/

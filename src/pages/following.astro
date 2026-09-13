@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import BulletList from "../components/BulletList.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const [profileEntry] = await getCollection("profile");
+const [followingEntry] = await getCollection("following");
+if (!profileEntry || !followingEntry) {
+  throw new Error("Profile and Following content are required.");
+}
+const profile = profileEntry.data;
+const following = followingEntry.data;
+---
+
+<SiteLayout profile={profile} title={`${following.heading} — ${profile.name}`} activePage="following">
+  <section class="section page-section" id="following" aria-labelledby="following-title">
+    <div class="section-label">
+      <h1 id="following-title">{following.heading}</h1>
+    </div>
+
+    {following.bullets.length > 0 && (
+      <BulletList items={following.bullets} class="section-content principle-list" />
+    )}
+  </section>
+</SiteLayout>
