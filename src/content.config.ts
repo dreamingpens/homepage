@@ -35,6 +35,7 @@ const profile = defineCollection({
       projects: z.string(),
       what_i_like: z.string(),
       following: z.string(),
+      thinking: z.string(),
     }),
     publications_heading: z.string(),
     projects_heading: z.string(),
@@ -104,6 +105,14 @@ const following = defineCollection({
   }),
 });
 
+const thinking = defineCollection({
+  loader: file("src/data/thinking.yaml"),
+  schema: z.object({
+    heading: z.string(),
+    bullets: z.array(bulletSchema).default([]),
+  }),
+});
+
 const publications = defineCollection({
   loader: file("src/data/publications.yaml"),
   schema: z.object({
@@ -157,6 +166,7 @@ export const collections = {
   whoami,
   likes,
   following,
+  thinking,
   publications,
   projects,
   links,

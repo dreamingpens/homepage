@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import BulletList from "../components/BulletList.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const [profileEntry] = await getCollection("profile");
+const [thinkingEntry] = await getCollection("thinking");
+if (!profileEntry || !thinkingEntry) {
+  throw new Error("Profile and Thinking content are required.");
+}
+const profile = profileEntry.data;
+const thinking = thinkingEntry.data;
+---
+
+<SiteLayout profile={profile} title={`${thinking.heading} — ${profile.name}`} activePage="thinking">
+  <section class="section page-section" id="thinking" aria-labelledby="thinking-title">
+    <div class="section-label">
+      <h1 id="thinking-title">{thinking.heading}</h1>
+    </div>
+
+    {thinking.bullets.length > 0 && (
+      <BulletList items={thinking.bullets} class="section-content principle-list" />
+    )}
+  </section>
+</SiteLayout>

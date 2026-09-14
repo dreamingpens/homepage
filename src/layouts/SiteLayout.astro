@@ -6,7 +6,7 @@ import "../styles/global.css";
 interface Props {
   profile: CollectionEntry<"profile">["data"];
   title?: string;
-  activePage?: "publications" | "projects" | "what-i-like" | "following";
+  activePage?: "publications" | "projects" | "what-i-like" | "following" | "thinking";
 }
 
 const { profile, title, activePage } = Astro.props;
@@ -35,6 +35,7 @@ const { profile, title, activePage } = Astro.props;
         <a href={withBase("/projects/")} aria-current={activePage === "projects" ? "page" : undefined}>{profile.navigation.projects}</a>
         <a href={withBase("/what-i-like/")} aria-current={activePage === "what-i-like" ? "page" : undefined}>{profile.navigation.what_i_like}</a>
         <a href={withBase("/following/")} aria-current={activePage === "following" ? "page" : undefined}>{profile.navigation.following}</a>
+        <a href={withBase("/thinking/")} aria-current={activePage === "thinking" ? "page" : undefined}>{profile.navigation.thinking}</a>
       </nav>
     </header>
 

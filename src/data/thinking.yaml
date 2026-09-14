@@ -1,0 +1,5 @@
+- id: main
+  heading: Thinking
+  bullets:
+    - text: Control the ideas, not the code — antirez
+      url: https://antirez.com/news/169
