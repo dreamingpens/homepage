@@ -10,6 +10,7 @@ The site is built with Astro and its visible content is stored in YAML files.
 - `src/data/beliefs.yaml` — beliefs section heading and bullet points
 - `src/data/whoami.yaml` — Who am I section heading and bullet points
 - `src/data/what-i-like.yaml` — What I like page heading and nested bullet points
+- `src/data/following.yaml` — Following page heading and links; supports nested bullets
 - `src/data/publications.yaml` — publications
 - `src/data/projects.yaml` — projects
 - `src/data/links.yaml` — profile links and CV
@@ -37,6 +38,7 @@ Philosophy `body` accepts either a paragraph or a list of bullets. Use `text` an
 - `/publications/` — selected publications
 - `/projects/` — projects
 - `/what-i-like/` — personal interests
+- `/following/` — people and sites I follow
 
 To add interests, replace `bullets: []` in `src/data/what-i-like.yaml` with a list.
 Nested items support the same `text` and `children` format as Philosophy and
