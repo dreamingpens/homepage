@@ -3,3 +3,5 @@
   bullets:
     - text: Control the ideas, not the code — antirez
       url: https://antirez.com/news/169
+    - text: Philosophy of software design — John Ousterhout
+      url: https://web.stanford.edu/~ouster/cgi-bin/aposd.php
